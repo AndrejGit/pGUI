@@ -10,6 +10,7 @@ void setup() {
   background(255);
   
   tester.buttonFill(100, 100, 100);
+  //tester.noFill = true;
   tester.formatText("Arial", 40);
   tester.setText("test", 65, 52);
   tester.textColour(200, 200, 200);
@@ -17,6 +18,7 @@ void setup() {
   tester.rounding =  8;
   tester.showHover = true;
   tester.hoverFill(34, 153, 245);
+  tester.hoverStroke(100, 223, 89);
   tester.stateBut = true;
   tester.stateFill(245, 21, 45);
 }
