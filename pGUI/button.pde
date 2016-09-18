@@ -94,10 +94,3 @@ class Button {
     text(buttonText, txtX, txtY);
   }
 }
-
-/* 
-- Outline colour
-- outline thickness
-- round corners
-- hover appearance
-*/
