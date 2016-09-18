@@ -21,7 +21,11 @@ class Button {
   int sR, sG, sB;
   int tR, tG, tB;
   int stR, stG, stB;
+  int shR, shG, shB;
+  int scR, scG, scB;
+  int ssR, ssG, ssB;
   float lineWeight = 1;
+  boolean noFill = false;
   
   int rounding = 0;
   
@@ -70,6 +74,17 @@ class Button {
     stR = R; stG = G; stB = B;
   }
   
+  void hoverStroke(int R, int G, int B) {
+    shR = R; shG = G; shB = B;
+  }
+  
+  void clickStroke(int R, int G, int B) {
+    scR = R; scG = G; scB = B;
+  }
+  
+  void stateStroke(int R, int G, int B) {
+    ssR = R; ssG = G; ssB = B;
+  }
   
   // Handles drawing and the application of colours
   void show() {
@@ -78,17 +93,24 @@ class Button {
     fill(dR, dG, dB); // default fill
     
      if (state) {
+      stroke(ssR, ssG, ssB);
       fill(sR, sG, sB);
     }
+     if (noFill) {
+      noFill();
+    }
     if (hovered && showHover) {
+      stroke(shR, shG, shB);
       fill(hR, hG, hB);
     }
     if (clicked) {
+      stroke(scR, scG, scB);
       fill(cR, cG, cB);
     }
     if (released && stateBut) {
       state =! state;
     }
+
     rect(x, y, wid, ht, rounding);
     fill(tR, tG, tB);
     text(buttonText, txtX, txtY);
