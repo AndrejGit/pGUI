@@ -13,12 +13,14 @@ void setup() {
   //tester.noFill = true;
   tester.formatText("Arial", 40);
   tester.setText("test", 65, 52);
+  //tester.showText = false;
   tester.textColour(200, 200, 200);
   tester.setOutline(0,0,0,4);
   tester.rounding =  8;
   tester.showHover = true;
   tester.hoverFill(34, 153, 245);
   tester.hoverStroke(100, 223, 89);
+  tester.clickFill(45, 67, 34);
   tester.stateBut = true;
   tester.stateFill(245, 21, 45);
 }
@@ -49,6 +51,13 @@ void hover(Button b) {
     && inRange(b.y, mouse.y, b.y+b.ht)) {
       b.hovered = true;
     } else { b.hovered = false; }
+}
+
+void circHover(CircButton c) {
+  float d = dist(c.x, c.y, mouse.x, mouse.y);
+  if (d <= c.radius) {
+    c.hovered = true;
+  } else { c.hovered = false; }
 }
   
 void buttClicked(Button b) {

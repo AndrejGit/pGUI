@@ -14,6 +14,7 @@ class Button {
   boolean released = false;
   boolean stateBut = false;
   boolean state = false;
+  boolean showText = false;
   
   int dR, dG, dB;
   int hR, hG, hB;
@@ -33,7 +34,9 @@ class Button {
     x = bx;
     y = by;
     wid = w;
-    ht = h;    
+    ht = h;
+    
+    buttonText = " ";
   }
   
   /* SETUP/FORMATTING FUNCTIONS */
@@ -102,6 +105,7 @@ class Button {
     if (hovered && showHover) {
       stroke(shR, shG, shB);
       fill(hR, hG, hB);
+      rect(x, y, wid, ht, rounding);
     }
     if (clicked) {
       stroke(scR, scG, scB);
@@ -113,6 +117,8 @@ class Button {
 
     rect(x, y, wid, ht, rounding);
     fill(tR, tG, tB);
-    text(buttonText, txtX, txtY);
+    if (showText) {
+      text(buttonText, txtX, txtY);
+    }
   }
 }
