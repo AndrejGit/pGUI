@@ -7,7 +7,6 @@ class Button {
   String buttonText;
   float txtX, txtY;
   
-  boolean hoverBut = false;
   boolean hovered = false;
   boolean showHover = false;
   boolean clicked = false;
@@ -95,7 +94,7 @@ class Button {
     stroke(stR, stG, stB);
     fill(dR, dG, dB); // default fill
     
-     if (state) {
+    if (state) {
       stroke(ssR, ssG, ssB);
       fill(sR, sG, sB);
     }
@@ -105,7 +104,6 @@ class Button {
     if (hovered && showHover) {
       stroke(shR, shG, shB);
       fill(hR, hG, hB);
-      rect(x, y, wid, ht, rounding);
     }
     if (clicked) {
       stroke(scR, scG, scB);
