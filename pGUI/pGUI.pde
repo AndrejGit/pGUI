@@ -44,8 +44,8 @@ void draw() {
   background(255);
   mouse.x = mouseX; mouse.y = mouseY;
   
-  hover(tester);
-  circHover(circle);
+  tester.hover(mouse);
+  circle.hover(mouse);
   buttClicked(tester);
   circClicked(circle);
   
@@ -61,20 +61,6 @@ void mousePressed() {
 void mouseReleased() {
   mouseDown = false;
   mouseUp = true;
-}
-
-void hover(Button b) {
-    if (inRange(b.x, mouse.x, b.x+b.wid)
-    && inRange(b.y, mouse.y, b.y+b.ht)) {
-      b.hovered = true;
-    } else { b.hovered = false; }
-}
-
-void circHover(CircButton c) {
-  float d = dist(c.x, c.y, mouse.x, mouse.y);
-  if (d <= (c.diameter/2)) {
-    c.hovered = true;
-  } else { c.hovered = false; }
 }
   
 void buttClicked(Button b) {

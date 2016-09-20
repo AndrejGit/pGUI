@@ -85,6 +85,15 @@ class CircButton {
     ssR = R; ssG = G; ssB = B;
   }
   
+  // INTERACTION
+  
+  void hover(PVector m) {
+    float d = dist(x, y, m.x, m.y);
+    if (d <= (diameter/2)) {
+      hovered = true;
+    } else { hovered = false; }
+  }
+  
   // Handles drawing and the application of colours
   void show() {
     strokeWeight(lineWeight);

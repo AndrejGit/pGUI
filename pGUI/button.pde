@@ -88,6 +88,14 @@ class Button {
     ssR = R; ssG = G; ssB = B;
   }
   
+  // INTERACTION
+  void hover(PVector m) {
+    if (inRange(x, m.x, x+wid)
+    && inRange(y, m.y, y+ht)) {
+      hovered = true;
+    } else { hovered = false; }
+  }
+  
   // Handles drawing and the application of colours
   void show() {
     strokeWeight(lineWeight);
