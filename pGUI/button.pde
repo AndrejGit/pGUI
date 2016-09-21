@@ -38,7 +38,7 @@ class Button {
     buttonText = " ";
   }
   
-  /* SETUP/FORMATTING FUNCTIONS */
+   /* SETUP/FORMATTING FUNCTIONS */
   
   void formatText(String font, int size) {
     buttonFont = createFont(font, size);
