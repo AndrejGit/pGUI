@@ -47,7 +47,7 @@ void draw() {
   tester.hover(mouse);
   circle.hover(mouse);
   buttClicked(tester);
-  circClicked(circle);
+  buttClicked(circle);
   
   tester.show();
   circle.show();
@@ -71,17 +71,6 @@ void buttClicked(Button b) {
       b.released = true;
       b.clicked = false;
     } else { b.released = false; }
-}
-
-// should use inhertiance to avoid this or make it a method
-void circClicked(CircButton c) {
-    if (c.hovered && mouseDown) {
-      c.clicked = true;
-    }
-    if (c.hovered && mouseUp && c.clicked) {
-      c.released = true;
-      c.clicked = false;
-    } else { c.released = false; }
 }
 
 boolean inRange(float low, float value, float high) {
