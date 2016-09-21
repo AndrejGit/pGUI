@@ -38,7 +38,7 @@ class Button {
     buttonText = " ";
   }
   
-   /* SETUP/FORMATTING FUNCTIONS */
+  /* SETUP/FORMATTING FUNCTIONS */
   
   void formatText(String font, int size) {
     buttonFont = createFont(font, size);
@@ -121,14 +121,10 @@ class Button {
       state =! state;
     }
 
-    drawShape();
+    rect(x, y, wid, ht, rounding);
     fill(tR, tG, tB);
     if (showText) {
       text(buttonText, txtX, txtY);
     }
-  }
-  
-  void drawShape() { // for subclass shape variation
-    rect(x, y, wid, ht, rounding);
   }
 }
