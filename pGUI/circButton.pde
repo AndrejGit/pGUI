@@ -2,18 +2,6 @@ class CircButton extends Button {
   
   float diameter;
   
-  int dR, dG, dB;
-  int hR, hG, hB;
-  int cR, cG, cB;
-  int sR, sG, sB;
-  int tR, tG, tB;
-  int stR, stG, stB;
-  int shR, shG, shB;
-  int scR, scG, scB;
-  int ssR, ssG, ssB;
-  float lineWeight = 1;
-  boolean noFill = false;
-  
   CircButton(float cx, float cy, float diam) {
     super(cx, cy, diam, diam);
     diameter = diam;
