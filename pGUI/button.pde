@@ -121,10 +121,14 @@ class Button {
       state =! state;
     }
 
-    rect(x, y, wid, ht, rounding);
+    drawShape();
     fill(tR, tG, tB);
     if (showText) {
       text(buttonText, txtX, txtY);
     }
+  }
+  
+  void drawShape() { // for subclass shape variation
+    rect(x, y, wid, ht, rounding);
   }
 }

@@ -23,35 +23,7 @@ class CircButton extends Button {
     } else { hovered = false; }
   }
   
-  // Handles drawing and the application of colours
-  void show() {
-    strokeWeight(lineWeight);
-    stroke(stR, stG, stB);
-    fill(dR, dG, dB); // default fill
-    
-    if (state) {
-      stroke(ssR, ssG, ssB);
-      fill(sR, sG, sB);
-    }
-     if (noFill) {
-      noFill();
-    }
-    if (hovered && showHover) {
-      stroke(shR, shG, shB);
-      fill(hR, hG, hB);
-    }
-    if (clicked) {
-      stroke(scR, scG, scB);
-      fill(cR, cG, cB);
-    }
-    if (released && stateBut) {
-      state =! state;
-    }
-
+  void drawShape() {
     ellipse(x, y, diameter, diameter);
-    fill(tR, tG, tB);
-    if (showText) {
-      text(buttonText, txtX, txtY);
-    }
   }
 }
