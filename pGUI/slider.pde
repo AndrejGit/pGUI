@@ -11,4 +11,8 @@ class Slider {
     
     sliderPos = sx;
   }
+  
+  void show() {
+    rect(x, y, wid, ht); // slider channel
+  }
 }

@@ -16,7 +16,7 @@ class Button {
   boolean showText = false;
   
   int dR, dG, dB;
-  int hR, hG, hB;
+  int hR, hG, hB, hA;
   int cR, cG, cB;
   int sR, sG, sB;
   int tR, tG, tB;
@@ -59,8 +59,8 @@ class Button {
     dR = R; dG = G; dB = B;
   }
   
-  void hoverFill(int R, int G, int B) {
-    hR = R; hG = G; hB = B;
+  void hoverFill(int R, int G, int B, int A) {
+    hR = R; hG = G; hB = B; hA = A;
   }
   
   void clickFill(int R, int G, int B) {
@@ -101,7 +101,6 @@ class Button {
     strokeWeight(lineWeight);
     stroke(stR, stG, stB);
     fill(dR, dG, dB); // default fill
-    
     if (state) {
       stroke(ssR, ssG, ssB);
       fill(sR, sG, sB);
@@ -109,19 +108,23 @@ class Button {
      if (noFill) {
       noFill();
     }
+    drawShape();
+    
     if (hovered && showHover) {
       stroke(shR, shG, shB);
-      fill(hR, hG, hB);
+      fill(hR, hG, hB, hA);
+      drawShape();
     }
     if (clicked) {
       stroke(scR, scG, scB);
       fill(cR, cG, cB);
+      drawShape();
     }
+    
     if (released && stateBut) {
       state =! state;
     }
-
-    drawShape();
+    
     fill(tR, tG, tB);
     if (showText) {
       text(buttonText, txtX, txtY);
@@ -132,3 +135,10 @@ class Button {
     rect(x, y, wid, ht, rounding);
   }
 }
+
+/* LAYERING
+
+Base fill (can be OFF)
+Hover fill (can be transparent)
+Click Fill
+*/

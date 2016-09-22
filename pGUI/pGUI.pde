@@ -11,7 +11,7 @@ void setup() {
   background(255);
   
   tester.buttonFill(100, 100, 100);
-  //tester.noFill = true;
+  tester.noFill = true;
   tester.formatText("Arial", 40);
   tester.setText("test", 65, 52);
   tester.showText = true;
@@ -19,21 +19,21 @@ void setup() {
   tester.setOutline(0,0,0,4);
   tester.rounding =  8;
   tester.showHover = true;
-  tester.hoverFill(34, 153, 245);
+  tester.hoverFill(34, 153, 245, 50);
   tester.hoverStroke(100, 223, 89);
   tester.clickFill(45, 67, 34);
   tester.stateBut = true;
   tester.stateFill(245, 21, 45);
   
   circle.buttonFill(100, 100, 100);
-  //circle.noFill = true;
+  circle.noFill = true;
   circle.formatText("Arial", 40);
   circle.setText("test", 18, 62);
   circle.showText = true;
   circle.textColour(200, 200, 200);
   circle.setOutline(0,0,0,4);
   circle.showHover = true;
-  circle.hoverFill(34, 153, 245);
+  circle.hoverFill(34, 153, 245, 50);
   circle.hoverStroke(100, 223, 89);
   circle.clickFill(45, 67, 34);
   circle.stateBut = true;
