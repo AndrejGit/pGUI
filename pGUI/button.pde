@@ -135,10 +135,3 @@ class Button {
     rect(x, y, wid, ht, rounding);
   }
 }
-
-/* LAYERING
-
-Base fill (can be OFF)
-Hover fill (can be transparent)
-Click Fill
-*/

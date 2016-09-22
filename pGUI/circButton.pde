@@ -7,15 +7,13 @@ class CircButton extends Button {
     diameter = diam;
   }
   
-  /* SETUP/FORMATTING FUNCTIONS */
-  
+  // Subclass methods overriding superclass methods
   void setText(String text, float tx, float ty) {
     buttonText = text;
     txtX = tx + (x - diameter/2);
     txtY = ty + (y - diameter/2);
   }
   
-  // INTERACTION
   void hover(PVector m) {
     float d = dist(x, y, m.x, m.y);
     if (d <= (diameter/2)) {

@@ -5,13 +5,14 @@ boolean mouseUp = true;
 
 Button tester = new Button(50, 50, 200, 80);
 CircButton circle = new CircButton(100, 300, 100);
+Slider fader = new Slider(50, 450, 200, 20);
 
 void setup() {
   size(600, 600);
   background(255);
   
   tester.buttonFill(100, 100, 100);
-  tester.noFill = true;
+  //tester.noFill = true;
   tester.formatText("Arial", 40);
   tester.setText("test", 65, 52);
   tester.showText = true;
@@ -38,6 +39,9 @@ void setup() {
   circle.clickFill(45, 67, 34);
   circle.stateBut = true;
   circle.stateFill(245, 21, 45);
+  
+  fader.channelFill(40, 40, 40);
+  fader.channelStroke(20, 20, 20);
 }
 
 void draw() {
@@ -51,6 +55,7 @@ void draw() {
   
   tester.show();
   circle.show();
+  fader.show();
 }
 
 void mousePressed() {
