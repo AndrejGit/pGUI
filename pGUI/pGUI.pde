@@ -55,6 +55,7 @@ void draw() {
   
   tester.show();
   circle.show();
+  fader.slide(); // needs to check for hover and click
   fader.show();
 }
 

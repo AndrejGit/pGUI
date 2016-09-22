@@ -4,6 +4,8 @@ class Slider {
   float sliderPos;
   Button sliderBtn;
   
+  float sliderValue = 0;
+  
   int chR, chG, chB;
   int scR, scG, scB;
   
@@ -14,7 +16,7 @@ class Slider {
     ht = h;
     
     sliderPos = sx;
-    sliderBtn = new CircButton(sliderPos, (ht-y)/2, ht+10);
+    sliderBtn = new CircButton(sliderPos, y+(ht/2), ht+20);
   }
   
   void channelFill(int r, int g, int b) {
@@ -30,11 +32,15 @@ class Slider {
   }
   
   void slide() {
+    if (sliderBtn.clicked) {
+      sliderBtn.y = mouse.y;
+    }
   }
   
   void show() {
     fill(chR, chG, chB);
     stroke(scR, scG, scB);
     rect(x, y, wid, ht); // slider channel
+    sliderBtn.show();
   }
 }
