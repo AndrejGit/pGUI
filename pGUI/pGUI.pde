@@ -50,8 +50,8 @@ void draw() {
   
   tester.hover(mouse);
   circle.hover(mouse);
-  buttClicked(tester);
-  buttClicked(circle);
+  tester.checkClick(mouseDown, mouseUp);
+  circle.checkClick(mouseDown, mouseUp);
   
   tester.show();
   circle.show();
@@ -66,16 +66,6 @@ void mousePressed() {
 void mouseReleased() {
   mouseDown = false;
   mouseUp = true;
-}
-  
-void buttClicked(Button b) {
-    if (b.hovered && mouseDown) {
-      b.clicked = true;
-    }
-    if (b.hovered && mouseUp && b.clicked) {
-      b.released = true;
-      b.clicked = false;
-    } else { b.released = false; }
 }
 
 boolean inRange(float low, float value, float high) {

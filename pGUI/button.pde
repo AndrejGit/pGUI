@@ -96,7 +96,17 @@ class Button {
     } else { hovered = false; }
   }
   
-  // Handles drawing and the application of colours
+  void checkClick(boolean mDwn, boolean mUp) {
+    if (hovered && mDwn) {
+      clicked = true;
+    }
+    if (hovered && mUp && clicked) {
+      released = true;
+      clicked = false;
+    } else { released = false; }
+  }
+  
+  // Handles drawing and application of colours
   void show() {
     strokeWeight(lineWeight);
     stroke(stR, stG, stB);
