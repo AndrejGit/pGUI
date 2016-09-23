@@ -42,6 +42,8 @@ void setup() {
   
   fader.channelFill(40, 40, 40);
   fader.channelStroke(20, 20, 20);
+  // would prefer this to be a slider method
+  fader.sliderBtn.buttonFill(50,123,200);
 }
 
 void draw() {
@@ -55,7 +57,7 @@ void draw() {
   
   tester.show();
   circle.show();
-  fader.slide(); // needs to check for hover and click
+  fader.slide();
   fader.show();
 }
 

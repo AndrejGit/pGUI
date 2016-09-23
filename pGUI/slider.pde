@@ -32,9 +32,15 @@ class Slider {
   }
   
   void slide() {
+    // If you want to slide you need thse functions running
+    sliderBtn.hover(mouse);
+    sliderBtn.checkClick(mouseDown, mouseUp);
+    
     if (sliderBtn.clicked) {
-      sliderBtn.y = mouse.y;
-    }
+      if (inRange(x, mouse.x, x+wid)) {
+        sliderBtn.x = mouse.x;
+      }
+    } else { sliderBtn.x = sliderBtn.x; }
   }
   
   void show() {
