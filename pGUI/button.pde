@@ -100,7 +100,7 @@ class Button {
     if (hovered && mDwn) {
       clicked = true;
     }
-    if (hovered && mUp && clicked) {
+    if (mUp && clicked) {
       released = true;
       clicked = false;
     } else { released = false; }

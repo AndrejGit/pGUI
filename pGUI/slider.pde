@@ -39,6 +39,7 @@ class Slider {
     if (sliderBtn.clicked) {
       if (inRange(x, mouse.x, x+wid)) {
         sliderBtn.x = mouse.x;
+        sliderValue = map(mouse.x, x, x+wid, 0, 1);
       }
     } else { sliderBtn.x = sliderBtn.x; }
   }

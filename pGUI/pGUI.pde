@@ -44,6 +44,8 @@ void setup() {
   fader.channelStroke(20, 20, 20);
   // would prefer this to be a slider method
   fader.sliderBtn.buttonFill(50,123,200);
+  fader.sliderBtn.setOutline(0,0,0,4);
+  fader.sliderBtn.clickFill(20,90,130);
 }
 
 void draw() {
@@ -59,6 +61,8 @@ void draw() {
   circle.show();
   fader.slide();
   fader.show();
+  
+  println(fader.sliderValue);
 }
 
 void mousePressed() {
