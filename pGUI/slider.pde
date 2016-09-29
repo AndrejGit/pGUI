@@ -31,6 +31,13 @@ class Slider {
     sliderBtn = new Button(sliderPos, y, ht+10, ht+10);
   }
   
+  boolean chnlHover(PVector m) {
+    if (inRange(x, m.x, x+wid)
+    && inRange(y, m.y, y+ht)) {
+      return true;
+    } else { return false; }
+  }
+  
   void slide() {
     // If you want to slide you need thse functions running
     sliderBtn.hover(mouse);
@@ -41,6 +48,11 @@ class Slider {
         sliderBtn.x = mouse.x;
         sliderValue = map(mouse.x, x, x+wid, 0, 1);
       }
+    } else { sliderBtn.x = sliderBtn.x; }
+    
+    // If you click on the channel move the button to it
+    if (chnlHover(mouse) && mouseDown) {
+      sliderBtn.x = mouse.x;
     } else { sliderBtn.x = sliderBtn.x; }
   }
   
